@@ -45,3 +45,9 @@ exp : number       {$$=$1;}
 	| tan1 number      {printf("%f",tan(($2/180)*3.14));}
 	;
 %%
+
+steps
+flex cal.l
+bison -d cal.y
+gcc lex.yy.c cal.tab.c
+a.exe
